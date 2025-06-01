@@ -107,16 +107,22 @@
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li>
+          <!--li>
             <select onchange="changeLanguage(this.value)">
               <option value="en">🇬🇧 English</option>
               <option value="sr">🇷🇸 Srpski</option>
               <option value="es">🇪🇸 Español</option>
               <option value="pt">🇧🇷 Português</option>
             </select>
-          </li>
+          </li-->
         </ul>
       </nav>
+      <div class="language-selector">
+        <img src="flags/en.png" alt="English" title="English" onclick="changeLanguage('en')" />
+        <img src="flags/sr.png" alt="Srpski" title="Srpski" onclick="changeLanguage('sr')" />
+        <img src="flags/es.png" alt="Español" title="Español" onclick="changeLanguage('es')" />
+        <img src="flags/pt.png" alt="Português" title="Português" onclick="changeLanguage('pt')" />
+      </div>
     </div>
   </header>
 
