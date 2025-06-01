@@ -5,28 +5,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ivana Notary 24</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script>
+    const translations = {
+      en: {
+        title: "Ivana Notary 24",
+        aboutHeading: "Professional, Reliable, and Convenient",
+        aboutText: "We provide certified notary public services with professionalism and integrity. Whether you need document authentication, witness services, or mobile notary visits, we’re here to help.",
+        servicesTitle: "Our Services",
+        services: ["Document Notarization", "Power of Attorney", "Mobile Notary (we come to you)", "Affidavits & Oaths"],
+        contactTitle: "Contact Us",
+        contactText: "Get in touch to schedule an appointment or request more information.",
+        namePlaceholder: "Name",
+        emailPlaceholder: "Email",
+        messagePlaceholder: "Message",
+        sendButton: "Send",
+        email: "Email",
+        phone: "Phone",
+        location: "Location"
+      },
+      sr: {
+        title: "Ivana Notar 24",
+        aboutHeading: "Profesionalno, Pouzdano, Praktično",
+        aboutText: "Pružamo overene javnobeležničke usluge sa profesionalnošću i integritetom. Bilo da Vam je potrebna autentikacija dokumenata, svedoci ili сmobilne notarske posete, tu smo da pomognemo.",
+        servicesTitle: "Naše Usluge",
+        services: ["Overa dokumenata", "Punomoćje", "Mobilni notar (dolazimo kod Vas)", "Izjave i zakletve"],
+        contactTitle: "Kontakt",
+        contactText: "Кontaktirajte nas za zakazivanje termina ili više informacija.",
+        namePlaceholder: "Ime",
+        emailPlaceholder: "Email",
+        messagePlaceholder: "Poruka",
+        sendButton: "Pošalji",
+        email: "Email",
+        phone: "Telefon",
+        location: "Lokacija"
+      },
+      es: {
+        title: "Ivana Notaría 24",
+        aboutHeading: "Profesional, Confiable y Conveniente",
+        aboutText: "Ofrecemos servicios notariales certificados con profesionalismo e integridad. Ya sea autenticación de documentos, servicios de testigos o visitas notariales móviles, estamos aquí para ayudar.",
+        servicesTitle: "Nuestros Servicios",
+        services: ["Legalización de Documentos", "Poder Notarial", "Notario Móvil (vamos a usted)", "Declaraciones Juradas y Juramentos"],
+        contactTitle: "Contáctenos",
+        contactText: "Contáctenos para programar una cita o solicitar más información.",
+        namePlaceholder: "Nombre",
+        emailPlaceholder: "Correo electrónico",
+        messagePlaceholder: "Mensaje",
+        sendButton: "Enviar",
+        email: "Correo",
+        phone: "Teléfono",
+        location: "Ubicación"
+      },
+      pt: {
+        title: "Ivana Cartório 24h",
+        aboutHeading: "Profissional, Confiável e Conveniente",
+        aboutText: "Oferecemos serviços notariais certificados com profissionalismo e integridade. Seja autenticação de documentos, serviços de testemunhas ou visitas móveis, estamos aqui para ajudar.",
+        servicesTitle: "Nossos Serviços",
+        services: ["Reconhecimento de Firma", "Procuração", "Notário Móvel (vamos até você)", "Declarações e Juramentos"],
+        contactTitle: "Fale Conosco",
+        contactText: "Entre em contato para agendar um horário ou pedir mais informações.",
+        namePlaceholder: "Nome",
+        emailPlaceholder: "Email",
+        messagePlaceholder: "Mensagem",
+        sendButton: "Enviar",
+        email: "Email",
+        phone: "Telefone",
+        location: "Localização"
+      }
+    };
+
+    function changeLanguage(lang) {
+      const t = translations[lang];
+      document.title = t.title;
+      document.querySelector("h1").textContent = t.title;
+      document.getElementById("about-heading").textContent = t.aboutHeading;
+      document.getElementById("about-text").textContent = t.aboutText;
+      document.getElementById("services-title").textContent = t.servicesTitle;
+      document.querySelectorAll(".services-list li").forEach((el, i) => {
+        el.textContent = t.services[i];
+      });
+      document.getElementById("contact-title").textContent = t.contactTitle;
+      document.getElementById("contact-text").textContent = t.contactText;
+      document.querySelector('input[name="name"]').placeholder = t.namePlaceholder;
+      document.querySelector('input[name="email"]').placeholder = t.emailPlaceholder;
+      document.querySelector('textarea[name="message"]').placeholder = t.messagePlaceholder;
+      document.querySelector("button[type='submit']").textContent = t.sendButton;
+      document.getElementById("email-label").textContent = t.email;
+      document.getElementById("phone-label").textContent = t.phone;
+      document.getElementById("location-label").textContent = t.location;
+    }
+  </script>
 </head>
-<body>
+<body onload="changeLanguage('en')">
   <header>
-    <h1>Your 24/7 Notary Solution</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1>Ivana Notary 24</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <select onchange="changeLanguage(this.value)">
+              <option value="en">🇬🇧 English</option>
+              <option value="sr">🇷🇸 Srpski</option>
+              <option value="es">🇪🇸 Español</option>
+              <option value="pt">🇧🇷 Português</option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>About This Site</h2>
-      <p>This is a simple static HTML and CSS website. It’s fast, lightweight, and easy to deploy.</p>
+  <main class="container">
+    <section id="about">
+      <h2 id="about-heading">About</h2>
+      <p id="about-text">Text</p>
+    </section>
+
+    <section id="services">
+      <h2 id="services-title">Services</h2>
+      <ul class="services-list">
+        <li></li><li></li><li></li><li></li><li></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2 id="contact-title">Contact</h2>
+      <p id="contact-text">Contact text</p>
+      <form action="mailto:info@ivananotary24.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <ul class="contact-list">
+        <li><strong id="email-label">Email:</strong> info@ivananotary24.com</li>
+        <li><strong id="phone-label">Phone:</strong> (226) 444 0255</li>
+        <li><strong id="location-label">Location:</strong> Kitchener, Ontario</li>
+      </ul>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 ivananotary24.com. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 Ivana Notary 24. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>
